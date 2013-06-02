@@ -1,0 +1,13 @@
+= form_for @comparison do |f|
+  - if @comparison.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@comparison.errors.count, "error")} prohibited this comparison from being saved:"
+      %ul
+        - @comparison.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :session
+    = f.text_field :session
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,19 @@
+%h1 Listing comparisons
+
+%table
+  %tr
+    %th Session
+    %th
+    %th
+    %th
+
+  - @comparisons.each do |comparison|
+    %tr
+      %td= comparison.session
+      %td= link_to 'Show', comparison
+      %td= link_to 'Edit', edit_comparison_path(comparison)
+      %td= link_to 'Destroy', comparison, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Comparison', new_comparison_path
