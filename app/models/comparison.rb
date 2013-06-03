@@ -5,8 +5,8 @@ class Comparison < ActiveRecord::Base
 
   TOTAL_COMPARISON = 10
 
-  SESSIONS = TOTAL_COMPARISON.times.collect do |session_number|
-    { "session" => session_number}
+  SESSIONS = TOTAL_COMPARISON.times.collect do |original_comparison_id|
+    { "original_id" => original_comparison_id}
   end.freeze
 
   def self.randomized_comparisons
