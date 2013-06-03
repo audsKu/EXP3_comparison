@@ -9,8 +9,15 @@ ul.breadcrumbs
     | #3
 
 h1
-  | Hi who is more slightly ugly
+  | Hi who is more ugly
+
+= simple_form_for @tester do |f|
+  = f.input :name
+  = f.button :submit
 .row
+  .large-centered.columns.large-3
+
+
   .large-centered.columns.large-12
     ul.large-block-grid-3
       li
@@ -24,5 +31,4 @@ h1
           = radio_button_tag 'selection','2'
         img[src="http://www.usmagazine.com/uploads/assets/photo_galleries/regular_galleries/1696-hollywoods-hottest-hunks/photos/1358981346_9-daniel-craig-560.jpg"]
       li
-        a.large.button[href="#"]
-          | Submit and Next
+
