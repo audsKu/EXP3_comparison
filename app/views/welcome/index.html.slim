@@ -1,0 +1,28 @@
+ul.breadcrumbs
+  li.current
+    | Welcome
+  li.unavailable
+    | #1
+  li.unavailable
+    | #2
+  li.unavailable
+    | #3
+
+h1
+  | Hi who is more slightly ugly
+.row
+  .large-centered.columns.large-12
+    ul.large-block-grid-3
+      li
+        label[for="radio1"]
+          | first selection
+          = radio_button_tag 'selection','1'
+        img[src="http://www.usmagazine.com/uploads/assets/photo_galleries/regular_galleries/1696-hollywoods-hottest-hunks/photos/1358981346_9-daniel-craig-560.jpg"]
+      li
+        label[for="radio2"]
+          | 2nd selection
+          = radio_button_tag 'selection','2'
+        img[src="http://www.usmagazine.com/uploads/assets/photo_galleries/regular_galleries/1696-hollywoods-hottest-hunks/photos/1358981346_9-daniel-craig-560.jpg"]
+      li
+        a.large.button[href="#"]
+          | Submit and Next
