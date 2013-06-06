@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603031448) do
+ActiveRecord::Schema.define(:version => 20130606040243) do
 
   create_table "comparisons", :force => true do |t|
     t.integer  "session_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "original_id"
+    t.integer  "tester_response"
+    t.string   "tester_name"
   end
 
   create_table "sessions", :force => true do |t|
