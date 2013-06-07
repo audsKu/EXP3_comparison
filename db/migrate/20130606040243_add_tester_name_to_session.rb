@@ -1,9 +1,9 @@
 class AddTesterNameToSession < ActiveRecord::Migration
   def up
-    add_column :comparisons, :tester_name, :string
+    add_column :sessions, :tester_name, :string
   end
 
   def down
-    remove_column :comparisons, :tester_name
+    remove_column :sessions, :tester_name
   end
 end

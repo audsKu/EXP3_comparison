@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130606040243) do
+ActiveRecord::Schema.define(:version => 20130606042209) do
 
   create_table "comparisons", :force => true do |t|
     t.integer  "session_id"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(:version => 20130606040243) do
 
   create_table "sessions", :force => true do |t|
     t.integer  "tester_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "tester_name"
   end
 
   create_table "testers", :force => true do |t|
