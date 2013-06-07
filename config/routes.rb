@@ -53,7 +53,7 @@ EXP3Comparison::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'session#new'
+   root :to => 'sessions#new'
 
   # See how all your routes lay out with "rake routes"
 

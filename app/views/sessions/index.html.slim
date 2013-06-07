@@ -1,0 +1,13 @@
+h1 Listing comparisons
+
+table
+  tr
+    th Original ID
+    th Session_ID
+
+
+  - @comparisons.each do |comparison|
+    tr
+      td= comparison.original_id
+      td= comparison.session_id
+
