@@ -1,8 +1,7 @@
 EXP3Comparison::Application.routes.draw do
 
-  resources :sessions, :only => [:new, :create]
+  resources :sessions, :only => [:new, :create, :index]
   resources :testers
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
