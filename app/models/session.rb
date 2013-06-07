@@ -7,19 +7,23 @@ class Session < ActiveRecord::Base
 
   TOTAL_COMPARISON = 10
 
-  SESSIONS = TOTAL_COMPARISON.times.collect do |original_comparison_id|
+  SESSIONS = TOTAL_COMPARISON.times.collect do | original_comparison_id |
     { "original_id" => original_comparison_id }
   end.freeze
 
-  def self.create_comparison_set
-    Comparison.create randomized_comparisons
+  def create_comparison_set!
+    Comparison.create randomized_comparisons(self)
   end
 
   private
-    def self.randomized_comparisons
-      @randomized_comparisons = self::SESSIONS
+    def randomized_comparisons(session)
+      @randomized_comparisons = self.class::SESSIONS
       .dup
       .shuffle
+
+      @randomized_comparisons.collect do |comparison|
+        comparison.merge "session_id" => session.id
+      end
     end
 
 end
