@@ -1,13 +1,14 @@
-h1 Listing comparisons
+h1 Session # #{@comparisons.first.session_id}
 
 table
   tr
     th Original ID
-    th Session_ID
+    th Compare images
 
 
   - @comparisons.each do |comparison|
+    |
     tr
-      td= comparison.original_id
+      td= image_tag "compare_images/#{comparison.original_id}.png"
       td= comparison.session_id
 
