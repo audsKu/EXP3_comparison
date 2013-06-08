@@ -7,7 +7,7 @@ class Session < ActiveRecord::Base
 
   TOTAL_COMPARISON = 10
 
-  SESSIONS = TOTAL_COMPARISON.times.collect do | original_comparison_id |
+  SESSIONS = 1.upto(TOTAL_COMPARISON).collect do | original_comparison_id |
     { "original_id" => original_comparison_id }
   end.freeze
 

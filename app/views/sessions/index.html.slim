@@ -1,4 +1,6 @@
-h1 Session # #{@comparisons.first.session_id}
+= will_paginate @comparisons, :renderer => MyLinkRenderer
+
+h5 Session # #{@comparisons.first.session_id}
 
 table
   tr

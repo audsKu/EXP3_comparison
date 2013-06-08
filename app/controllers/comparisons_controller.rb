@@ -2,7 +2,7 @@ class ComparisonsController < ApplicationController
   # GET /comparisons
   # GET /comparisons.json
   def index
-    @comparisons = Comparison.all
+    @comparisons = Comparison.limit(1).page(params[:page]).per(2)
 
     respond_to do |format|
       format.html # index.html.erb

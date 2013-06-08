@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def index
-    @comparisons = Comparison.all
+    @comparisons = Comparison.paginate(:page => params[:page],:per_page => 1)
 
     respond_to do |format|
       format.html
