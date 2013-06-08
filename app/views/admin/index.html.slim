@@ -1,0 +1,16 @@
+h2 To get a CSV formatted version of this file, go to /tony-secret-back-door.csv
+
+table
+  thead
+    tr
+      th Session ID
+      th Original order
+      th Response (1: top, 2: bottom)
+      th Date/Time
+  tbody
+    - @comparison.each do | field|
+      tr
+        td= field.session_id
+        td= field.original_id
+        td= field.tester_response
+        td= field.updated_at

