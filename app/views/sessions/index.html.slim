@@ -7,7 +7,11 @@
 
     - @comparisons.each do |comparison|
       .large-9.columns
-        = image_tag "compare_images/#{comparison.original_id}.png"
+        - if comparison.original_id != 0
+          = image_tag "compare_images/#{comparison.original_id}.png"
+        - else
+          h1 That's all folks! Thank you for playing.
+             If you got hurt during the game, please report to Anthony.
       .large-2.columns
         .auds-button-group
           = will_paginate(@comparisons, :class => 'button', :renderer => PaginateButtonRenderer, :previous_label => ''.html_safe, :next_label => ''.html_safe)

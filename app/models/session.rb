@@ -21,6 +21,9 @@ class Session < ActiveRecord::Base
       .dup
       .shuffle
 
+      #append with an zero id for end of session
+      @randomized_comparisons << { "original_id" => 0 }
+
       @randomized_comparisons.collect do |comparison|
         comparison.merge "session_id" => session.id
       end
