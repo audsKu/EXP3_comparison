@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
 
     if @session.save
       @session.create_comparison_set!
+      session[:experiment_session_id]=@session.id
       redirect_to :action => 'index', notice: "Let's start." and return
     else
       render action: "new"
@@ -23,7 +24,10 @@ class SessionsController < ApplicationController
   end
 
   def index
-    @comparisons = Comparison.paginate(:page => params[:page],:per_page => 1)
+    @comparisons = Comparison.paginate(:page => params[:page],
+                                       :per_page => 1,
+                                       :conditions => {:session_id => session[:experiment_session_id]})
+    @session = Session.find(session[:experiment_session_id])
 
     respond_to do |format|
       format.html

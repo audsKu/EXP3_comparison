@@ -1,6 +1,6 @@
 = will_paginate(@comparisons, :class => 'breadcrumbs', :inner_window => 20, :outer_window => 3, :renderer => PageNavRenderer, :previous_label => ''.html_safe, :next_label => ''.html_safe)
 
-h5 Session # #{@comparisons.first.session_id}
+h5 Hello #{@session.tester_name}
 
 - @comparisons.each do |comparison|
   .row
