@@ -1,6 +1,8 @@
+Here is the snappy game http://tony-experiment.herokuapp.com
+
 == Tony's experiment
 
-Helping Tony create a browser-based questionaire for a human factors experiment
+Help Tony create a browser-based interface for a human factors experiment
 
 === Problem
 
@@ -11,3 +13,5 @@ Tony is taking too long to finish his PhD.
 1. Tony can graduate sooner with his PhD degree already.
 
 2. Tony can move on with his life.
+
+2013
