@@ -24,10 +24,17 @@ class SessionsController < ApplicationController
   end
 
   def index
+
     @comparisons = Comparison.paginate(:page => params[:page],
                                        :per_page => 1,
+                                       :order => 'id',
                                        :conditions => {:session_id => session[:experiment_session_id]})
     @session = Session.find(session[:experiment_session_id])
+    tester_response = params[:tester_response]
+
+    if tester_response
+      Comparison.find_by_session_id(@session).update_attribute('tester_response', tester_response)
+    end
 
     respond_to do |format|
       format.html
