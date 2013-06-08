@@ -34,7 +34,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
 
 gem "unicorn", ">= 4.3.1"
 gem "pg", ">= 0.15.0"
