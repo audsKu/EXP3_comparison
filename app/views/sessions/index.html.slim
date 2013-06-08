@@ -2,17 +2,11 @@
 
 h5 Session # #{@comparisons.first.session_id}
 
-table
-  tr
-    th Original ID
-    th Compare images
-    th Next Button
-
-  - @comparisons.each do |comparison|
-    |
-    tr
-      td= image_tag "compare_images/#{comparison.original_id}.png"
-      td= comparison.session_id
-      td= will_paginate(@comparisons, :class => 'button', :renderer => PaginateButtonRenderer, :previous_label => ''.html_safe, :next_label => ''.html_safe)
-
-
+- @comparisons.each do |comparison|
+  .row
+    .large-11.large-centered.columns
+      .large-9.columns
+        = image_tag "compare_images/#{comparison.original_id}.png"
+      .large-2.columns
+        .auds-button-group
+          = will_paginate(@comparisons, :class => 'button', :renderer => PaginateButtonRenderer, :previous_label => ''.html_safe, :next_label => ''.html_safe)
