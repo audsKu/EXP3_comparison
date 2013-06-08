@@ -1,34 +1,32 @@
-ul.breadcrumbs
-  li.current
-    | Welcome
-  li.unavailable
-    | #1
-  li.unavailable
-    | #2
-  li.unavailable
-    | #3
-
-h1
-  | Hi who is more ugly
-
-= simple_form_for @session do |f|
-  = f.input :tester_name
-  = f.button :submit
 .row
-  .large-centered.columns.large-3
+  .large-centered.columns.large-9
+    h1
+      | The Choosy Game
+    p Hey There,
+    p Thank you for dropping by and play The Choosy Game.
+      This game will only take you 20 minutes to complete.
+      You will be presented with 2 choices.
+      Your task is to pick an option that looks best to you.
+    p For example, take a look at the two pictures below,
+      can you tell which pair of boxer fits better on the dude?
+    p If you think this is difficult, don't worry, the real game is easier!
 
+  .large-centered.columns.large-9
 
-  .large-centered.columns.large-12
+    = simple_form_for @session do |f|
+      = f.input :tester_name,
+                :label => "Now, if you tell us your name, we will greet like your grandparents.",
+                :placeholder => "Your name here"
+      = f.button :submit,"Shall we start already?", :label=> "Let's start"
+
     ul.large-block-grid-3
       li
         label[for="radio1"]
-          | first selection
-          = radio_button_tag 'selection','1'
+          | first choice
         img[src="http://www.usmagazine.com/uploads/assets/photo_galleries/regular_galleries/1696-hollywoods-hottest-hunks/photos/1358981346_9-daniel-craig-560.jpg"]
       li
         label[for="radio2"]
-          | 2nd selection
-          = radio_button_tag 'selection','2'
+          | 2nd choice
         img[src="http://www.usmagazine.com/uploads/assets/photo_galleries/regular_galleries/1696-hollywoods-hottest-hunks/photos/1358981346_9-daniel-craig-560.jpg"]
       li
 
