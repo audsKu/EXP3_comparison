@@ -1,4 +1,4 @@
-= will_paginate @comparisons, :renderer => MyLinkRenderer
+= will_paginate(@comparisons, :class => 'breadcrumbs', :inner_window => 20, :outer_window => 3, :renderer => PageNavRenderer, :previous_label => ''.html_safe, :next_label => ''.html_safe)
 
 h5 Session # #{@comparisons.first.session_id}
 
@@ -6,11 +6,13 @@ table
   tr
     th Original ID
     th Compare images
-
+    th Next Button
 
   - @comparisons.each do |comparison|
     |
     tr
       td= image_tag "compare_images/#{comparison.original_id}.png"
       td= comparison.session_id
+      td= will_paginate(@comparisons, :class => 'button', :renderer => PaginateButtonRenderer, :previous_label => ''.html_safe, :next_label => ''.html_safe)
+
 
