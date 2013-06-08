@@ -5,7 +5,7 @@ class Session < ActiveRecord::Base
 
   attr_accessible :tester_name
 
-  TOTAL_COMPARISON = 10
+  TOTAL_COMPARISON = 90
 
   SESSIONS = 1.upto(TOTAL_COMPARISON).collect do | original_comparison_id |
     { "original_id" => original_comparison_id }
