@@ -5,12 +5,12 @@ class Comparison < ActiveRecord::Base
 
   RESULTS_TO_INCLUDE = [:session_id, :original_id, :tester_response, :updated_at]
 
-  @comparison = Comparison.select(RESULTS_TO_INCLUDE)
+  @@comparison = Comparison.select(RESULTS_TO_INCLUDE)
 
   def self.to_csv
     CSV.generate do | csv |
       csv << RESULTS_TO_INCLUDE
-      @comparison.each do |record|
+      @@comparison.each do |record|
         csv << record.attributes.values
       end
     end
