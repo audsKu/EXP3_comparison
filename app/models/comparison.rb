@@ -9,12 +9,11 @@ class Comparison < ActiveRecord::Base
 
   def self.to_csv
     CSV.generate do | csv |
-      csv << RESULTS_TO_INCLUDE
+      csv << (RESULTS_TO_INCLUDE << :tester_name)
       @@comparison.each do |record|
-        csv << record.attributes.values
+        csv << (record.attributes.values << record.session.tester_name)
       end
     end
   end
-
 
 end

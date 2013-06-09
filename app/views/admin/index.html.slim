@@ -4,6 +4,7 @@ table
   thead
     tr
       th Session ID
+      th Tester Name
       th Original order
       th Response (1: top, 2: bottom)
       th Date/Time
@@ -11,6 +12,7 @@ table
     - @comparison.each do | field|
       tr
         td= field.session_id
+        td= field.session.tester_name
         td= field.original_id
         td= field.tester_response
         td= field.updated_at
