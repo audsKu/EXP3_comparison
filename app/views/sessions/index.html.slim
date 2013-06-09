@@ -6,9 +6,9 @@
     h5 Hello #{@session.tester_name}
 
     - @comparisons.each do |comparison|
-      .large-9.columns
+      .large-9.columns#auds-compare-image
         - if comparison.original_id != 0
-          = image_tag "compare_images/#{comparison.original_id}.png"
+          = image_tag "compare_images/#{comparison.original_id}.png", :size => "600x800"
         - else
           h1 That's all folks! Thank you for playing.
              If you got hurt during the game, please report to Anthony.

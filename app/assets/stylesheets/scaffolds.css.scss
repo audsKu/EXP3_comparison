@@ -12,10 +12,6 @@ p, ol, ul, td {
   line-height: 18px;
 }
 
-.auds-button-group {
-  margin-top: 100px;
-}
-
 pre {
   background-color: #eee;
   padding: 10px;
@@ -43,6 +39,14 @@ div {
   color: green;
 }
 
+#auds-compare-image img {
+  height: 800px;
+  width: 600px;
+}
+
+.auds-button-group {
+  margin-top: 250px;
+}
 .field_with_errors {
   padding: 2px;
   background-color: red;
