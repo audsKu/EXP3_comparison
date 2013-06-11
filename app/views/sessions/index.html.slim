@@ -8,7 +8,7 @@
     - @comparisons.each do |comparison|
       .large-9.columns#auds-compare-image
         - if comparison.original_id != 0
-          = image_tag "compare_images/#{comparison.original_id}.png", :size => "600x800"
+          = image_tag "compare_images/#{comparison.original_id}.png", :size => "800x600"
         - else
           h1 Done. Thank you for your time!
           /h1 That's all folks! Thank you for playing.
